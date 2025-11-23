@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
   <main class="dashboard">
@@ -15,19 +15,19 @@
         <summary>Company Information</summary>
         <ul class="checklist">
           <li>
-            <a href="vehicle.html">
+            <a href="{{ url_for('view_vehicle') }}">
               <i class="bi bi-truck"></i>
               <span>Vehicle Specific Dashboard</span>
             </a>
           </li>
           <li>
-            <a href="drivers.html">
+            <a href="{{ url_for('view_drivers') }}">
               <i class="bi bi-person-lines-fill"></i>
               <span>Driver Contact Details</span>
             </a>
           </li>
           <li>
-            <a href="history.html">
+            <a href="{{ url_for('view_history') }}">
               <i class="bi bi-clock-history"></i>
               <span>History</span>
             </a>
@@ -39,27 +39,27 @@
     <section class="grid-two">
       <div class="card highlight">
         <h3><i class="bi bi-bar-chart"></i> Overall Vehicle Capacity Utilization</h3>
-        <div class="pie-chart">
-          <div class="pie-label">65%</div>
+        <div class="pie-chart" style="background: conic-gradient(orange 0% {{ utilization }}%, white {{ utilization }}% 100%);">
+          <div class="pie-label">{{ utilization }}%</div>
         </div>
       </div>
       <div class="card">
         <h3><i class="bi bi-truck"></i> Live Logistics Tracking</h3>
         <div class="form-row">
           <label for="avgDelay">Average Delay Time:</label>
-          <input id="avgDelay" type="text" />
+          <input id="avgDelay" type="text" value="0 hrs" readonly />
         </div>
         <div class="form-row">
           <label for="avgIdle">Average Idle Time:</label>
-          <input id="avgIdle" type="text" />
+          <input id="avgIdle" type="text" value="2 hrs" readonly />
         </div>
         <div class="form-row">
           <label for="numOrders">Number of Orders:</label>
-          <input id="numOrders" type="text" />
+          <input id="numOrders" type="text" value="{{ delivery_count }}" readonly />
         </div>
         <div class="form-row">
-          <label for="billingAcc">Billing Accuracy (%):</label>
-          <input id="billingAcc" type="text" />
+          <label for="billingAcc">Average Mileage (km):</label>
+          <input id="billingAcc" type="text" value="{{ avg_odometer }}" readonly />
         </div>
 
         <p>Daily Order Completion:</p>
@@ -77,27 +77,27 @@
       <div class="grid-three">
         <div class="form-row">
           <label for="onTime">On-Time Deliveries (%):</label>
-          <input id="onTime" type="text" />
+          <input id="onTime" type="text" value="{{ on_time_percent }}" readonly />
         </div>
         <div class="form-row">
-          <label for="backlogs">On-Time Dispatch (%):</label>
-          <input id="backlogs" type="text" />
+          <label for="totalTrucks">Total Trucks:</label>
+          <input id="totalTrucks" type="text" value="{{ truck_count }}" readonly />
         </div>
         <div class="form-row">
-          <label for="rejected">Backlogs (%):</label>
-          <input id="rejected" type="text" />
+          <label for="totalDrivers">Total Drivers:</label>
+          <input id="totalDrivers" type="text" value="{{ driver_count }}" readonly />
         </div>
         <div class="form-row">
-          <label for="orderAcc">Order Accuracy (%):</label>
-          <input id="orderAcc" type="text" />
+          <label for="delivered">Delivered Orders:</label>
+          <input id="delivered" type="text" value="{{ delivered }}" readonly />
         </div>
         <div class="form-row">
-          <label for="avgReturn">Average Returns per Order:</label>
-          <input id="avgReturn" type="text" />
+          <label for="pending">Pending Orders:</label>
+          <input id="pending" type="text" value="{{ pending }}" readonly />
         </div>
         <div class="form-row">
-          <label for="dispatch">Number of Rejected Orders:</label>
-          <input id="dispatch" type="text" />
+          <label for="maintenance">Maintenance Records:</label>
+          <input id="maintenance" type="text" value="{{ maintenance_count }}" readonly />
         </div>
       </div>
     </section>
@@ -115,7 +115,7 @@
 
     <section class="card">
       <h4>
-        <a href="index.html">
+        <a href="{{ url_for('index') }}">
           <i class="bi bi-box-arrow-right"></i>
           <span>Sign Out</span>
         </a>
