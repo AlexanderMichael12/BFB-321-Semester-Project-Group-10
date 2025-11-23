@@ -15,19 +15,19 @@
         <summary>Company Information</summary>
         <ul class="checklist">
           <li>
-            <a href="vehicle.html">
+            <a href="{{ url_for('view_vehicle') }}">
               <i class="bi bi-truck"></i>
               <span>Vehicle Specific Dashboard</span>
             </a>
           </li>
           <li>
-            <a href="drivers.html">
+            <a href="{{ url_for('view_drivers') }}">
               <i class="bi bi-person-lines-fill"></i>
               <span>Driver Contact Details</span>
             </a>
           </li>
           <li>
-            <a href="history.html">
+            <a href="{{ url_for('view_history') }}">
               <i class="bi bi-clock-history"></i>
               <span>History</span>
             </a>
@@ -115,7 +115,7 @@
 
     <section class="card">
       <h4>
-        <a href="index.html">
+        <a href="{{ url_for('login') }}">
           <i class="bi bi-box-arrow-right"></i>
           <span>Sign Out</span>
         </a>

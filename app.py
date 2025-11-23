@@ -233,4 +233,6 @@ def add_odometer():
     return jsonify({"message": "Odometer reading added"}), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
+
+
