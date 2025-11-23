@@ -9,21 +9,22 @@
 <body>
   <main class="wrap">
     <h1>Sign In</h1>
-    <form action="home.html" method="get">
+    <form action="{{ url_for('home') }}" method="get">
       <div class="field">
         <label for="username">Username</label>
         <input id="username" name="username" type="text"/>
       </div>
+
       <div class="field">
         <label for="password">Password</label>
         <input id="password" name="password" type="password"/>
       </div>
-      <div class="row">
-        <a class="link" href="#">Forgot Password?</a>
-      </div>
+
       <button type="submit" class="btn-primary">Sign in</button>
+
       <div class="or">or</div>
-      <button type="submit" formaction="home.html" class="btn-ghost google">
+
+      <button type="submit" class="btn-ghost google">
         <img alt="" src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png">
         <span>Sign in with Google</span>
       </button>

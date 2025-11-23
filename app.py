@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify
 import sqlite3
 import os
 
@@ -6,21 +6,16 @@ app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'
 
 def get_db_connection():
-    """Get database connection"""
     conn = sqlite3.connect('TruckDelivery.db')
     conn.row_factory = sqlite3.Row
     return conn
 
 @app.route('/')
 def login():
-    return render_template('login.html')
+    return render_template('index.html')
 
-@app.route('/dashboard')
-def dashboard():
-    """
-    Main dashboard page.
-    Similar to lecturer's index(): shows high-level KPIs.
-    """
+@app.route('/home')
+def home():
     conn = get_db_connection()
 
     truck_count = conn.execute("SELECT COUNT(*) FROM trucks").fetchone()[0]
@@ -28,13 +23,13 @@ def dashboard():
     delivery_count = conn.execute("SELECT COUNT(*) FROM deliveries").fetchone()[0]
     maintenance_count = conn.execute("SELECT COUNT(*) FROM maintenance_logs").fetchone()[0]
 
-    avg_odometer = conn.execute("""
-        SELECT AVG(odometer_reading) FROM odometer_logs
-    """).fetchone()[0] or 0
+    avg_odometer = conn.execute(
+        "SELECT AVG(odometer_reading) FROM odometer_logs"
+    ).fetchone()[0] or 0
     conn.close()
 
     return render_template(
-        'index.html',
+        'home.html',
         truck_count=truck_count,
         driver_count=driver_count,
         delivery_count=delivery_count,
@@ -44,9 +39,6 @@ def dashboard():
 
 @app.route('/drivers')
 def view_drivers():
-    """
-    Drivers page: later we'll show drivers from DB in the table.
-    """
     conn = get_db_connection()
     drivers = conn.execute("""
         SELECT d.driver_id,
