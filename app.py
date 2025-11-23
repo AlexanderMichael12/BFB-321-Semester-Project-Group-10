@@ -15,7 +15,6 @@ def get_db_connection():
 def login():
     return render_template('login.html')
 
-
 @app.route('/dashboard')
 def dashboard():
     """
@@ -32,7 +31,6 @@ def dashboard():
     avg_odometer = conn.execute("""
         SELECT AVG(odometer_reading) FROM odometer_logs
     """).fetchone()[0] or 0
-
     conn.close()
 
     return render_template(
@@ -229,7 +227,6 @@ def get_odometer(truck_id):
     """, (truck_id,)).fetchall()
     conn.close()
     return jsonify([dict(r) for r in rows]), 200
-
 
 @app.route('/odometer/add', methods=['POST'])
 def add_odometer():
