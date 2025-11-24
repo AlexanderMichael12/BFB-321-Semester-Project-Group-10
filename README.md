@@ -43,11 +43,13 @@ The system provides:
     - CSS
     - Bootstrap Icons
     - Jinja2 templating (used within Flask)
-- Backend: 
+      
+- Backend:
     - Flask (Python): Handles routing, REST API endpoints, template rendering, and
       database communciation
     - REST API structure for CRUD operations
     - Python + SQLite integration
+      
 - Database Layer: 
     - SQL schema (`TruckDelivery.sql`) 
     - SQLite demo DB (`TruckDelivery.db`)
