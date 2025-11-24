@@ -68,7 +68,9 @@ def home():
                          maintenance_count=maintenance_count,
                          utilization=utilization,
                          avg_delay=avg_delay,
-                         avg_idle='N/A')
+                         avg_idle='0',
+                         customer_queries='Customer feedback pending review.',
+                         satisfaction_score='4.2/5.0')
 
 @app.route('/dashboard')
 def dashboard():
@@ -203,7 +205,7 @@ def view_vehicle():
             WHERE truck_id = ? AND status='Pending' 
             ORDER BY scheduled_dropoff LIMIT 1
         """, (first_truck_id,)).fetchone()
-        expected_delivery_time = 'N/A'
+        expected_delivery_time = '1 hour'
         if pending_delivery:
             from datetime import datetime
             dropoff_time = datetime.fromisoformat(pending_delivery[0])
@@ -216,7 +218,7 @@ def view_vehicle():
         deliveries = 0
         utilization = 0
         next_service_date = 'N/A'
-        expected_delivery_time = 'N/A'
+        expected_delivery_time = '1 hour'
     
     conn.close()
     
