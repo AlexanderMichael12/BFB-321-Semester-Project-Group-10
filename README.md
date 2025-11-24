@@ -115,10 +115,17 @@ The database includes sample entries for testing:
 └─ app.py                 # Flask application
 ```
 ## Usage
+To run the system locally:
 
 1. Open the project folder in VS Code.
-2. Double-click the `index.html` and the web browser will open up.
-3. Navigate the different pages to manage the drivers and trucks or view the overall company history.
+2. Open the integrated terminal.
+3. Run the Flask application:
+  - python app.py
+4. Open the system in your browser at:
+  - http.//127.0.0.1:5000/
+
+The application will load the Login Page, and users can navigate through all dashboards, driver records, vehicle details, and history pages using live data from the SQLite database.
+
 
 ## Technologies Used
 
@@ -132,11 +139,13 @@ The database includes sample entries for testing:
 
 ## Browser Compatibility
 
-The application works with all modern browsers that support HTML5 and CSS3, including:
+The application is compatible with all modern browsers that support HTML5 and CSS3, including:
 
 - Chrome 90+
 - Firefox 88+ 
 - Safari 14+ 
 - Edge 90+
 
-**Note:** This is a static HTML/CSS application. For production use, backend functionality would be required for database connectivity and form processing. 
+**Note:** 
+This system is a fully functional prototype that uses Flask and SQLite for backend processing and data persistence.
+For a production environment, additional features such as user authentication, security hardening, deployment to a cloud server, and a scalable database MySQL would be required.
