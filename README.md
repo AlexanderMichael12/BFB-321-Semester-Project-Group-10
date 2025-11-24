@@ -16,16 +16,16 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 ---
 ## Task allocation
 
-- Alexander Michael
+- Alexander Michael:
 Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
 
-- Dimitri Ladas
+- Dimitri Ladas:
 Created the entire project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
 
-- Jarod Labuschagne
+- Jarod Labuschagne:
 Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
 
-- Leandro Pimentel
+- Leandro Pimentel:
 Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report.
 
 ---
