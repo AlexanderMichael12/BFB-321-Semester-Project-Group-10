@@ -2,12 +2,15 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, f
 import sqlite3
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, 'TruckDelivery.db')
+
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'
 
 def get_db_connection():
     """Get database connection"""
-    conn = sqlite3.connect('TruckDelivery.db')
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -349,6 +352,17 @@ def add_odometer():
     conn.commit()
     conn.close()
     return jsonify({"message": "Odometer reading added"}), 201
+
+@app.route('/test_db')
+def test_db():
+    """Simple route to test database connection"""
+    try:
+        conn = get_db_connection()
+        count = conn.execute("SELECT COUNT(*) FROM trucks").fetchone()[0]
+        conn.close()
+        return f"DB OK.trucks table has {count} rows."
+    except Exception as e:
+        return f"DB ERROR: {e}"
 
 if __name__ == '__main__':
     app.run(debug=True)
