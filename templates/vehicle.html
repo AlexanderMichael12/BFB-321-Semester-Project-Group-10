@@ -9,7 +9,6 @@
 </head>
 <body>
   <main class="dashboard">
-
     <section class="card highlight">
       <h4>Vehicle Specific Information</h4>
       <form class="toolbar" action="#" method="get" novalidate>
@@ -20,8 +19,6 @@
         <button type="submit" class="apply-button" aria-label="Apply filters">Apply</button>
       </form>
     </section>
-
-    
     <section class="grid-two">
       <div class="card highlight">
         <h3><i class="bi bi-bar-chart"></i> Individual Vehicle Capacity Utilization</h3>
@@ -47,9 +44,7 @@
       <div class="grid-one">
         <textarea placeholder="Service details not available" readonly></textarea>
       </div>
-
     </section>
-
     <section class="card">
       <h5><i class="bi bi-broadcast"></i> Live Vehicle Tracker</h5>
       <div class="grid-one">
@@ -57,14 +52,12 @@
             alt="South Africa Map" class="map-image">
       </div>
     </section>
-
     <section class="card">
     <h3><i class="bi bi-clock"></i> Expected Time to Complete Current Delivery</h3>
     <div>
       <input type="text" value="{{ expected_delivery_time|default('N/A') }}" readonly>
     </div>
     </section>
-
     <section class="card">
       <h4>
         <a href="{{ url_for('home') }}">
@@ -73,7 +66,6 @@
         </a>
       </h4>
     </section>
-
   </main>
 </body>
 </html> 

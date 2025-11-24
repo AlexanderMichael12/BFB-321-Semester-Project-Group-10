@@ -9,7 +9,6 @@
 </head>
 <body>
   <main class="dashboard">
-
     <section class="card dropdown">
       <details>
         <summary>Company Information</summary>
@@ -35,7 +34,6 @@
         </ul>
       </details>
     </section>
-
     <section class="grid-two">
       <div class="card highlight">
         <h3><i class="bi bi-bar-chart"></i> Overall Vehicle Capacity Utilization</h3>
@@ -61,7 +59,6 @@
           <label for="billingAcc">Average Mileage (km):</label>
           <input id="billingAcc" type="text" value="{{ avg_odometer }}" readonly />
         </div>
-
         <p>Daily Order Completion:</p>
         <div class="progress">
           <div></div>
@@ -71,7 +68,6 @@
         </div>
       </div>
     </section>
-
     <section class="card highlight">
       <h3><i class="bi bi-box-seam"></i> Order Management</h3>
       <div class="grid-three">
@@ -101,7 +97,6 @@
         </div>
       </div>
     </section>
-
     <section class="card">
       <h3><i class="bi bi-people"></i> Customer Relations</h3>
       <div class="grid-two">
@@ -112,7 +107,6 @@
         </div>
       </div>
     </section>
-
     <section class="card">
       <h4>
         <a href="{{ url_for('index') }}">
@@ -121,7 +115,6 @@
         </a>
       </h4>
     </section>
-
   </main>
 </body>
 </html>

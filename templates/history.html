@@ -9,40 +9,36 @@
 </head>
 <body>
   <main class="dashboard">
-
     <section class="card highlight">
       <h4>Company History</h4>
     </section>
-
     <section class="grid-two">
-  <div class="card highlight">
-    <h3><i class="bi bi-bar-chart"></i> Vehicle Utilisation History</h3>
-    <div class="pie-chart-history">
-      <div class="pie-label-history">{{ utilization }}%</div>
-    </div>
-  </div>
-
-  <div class="card logistics-card">
-    <h3><i class="bi bi-truck"></i> Logistics Tracking History</h3>
-    <div class="form-row">
-      <label for="avgDelay">Average Delay Time:</label>
-      <input id="avgDelay" type="text" value="{{ avg_delay|default('0.5') }} hrs" readonly />
-    </div>
-    <div class="form-row">
-      <label for="avgIdle">Average Idle Time:</label>
-      <input id="avgIdle" type="text" value="{{ avg_idle|default('1.5') }} hrs" readonly />
-    </div>
-    <div class="form-row">
-      <label for="numOrders">Number of Orders Completed:</label>
-      <input id="numOrders" type="text" value="{{ total_deliveries }}" readonly />
-    </div>
-    <div class="form-row">
-      <label for="billingAcc">Performance Accuracy (%):</label>
-      <input id="billingAcc" type="text" value="{{ on_time_percent }}" readonly />
-    </div>
-  </div> 
-</section> 
-
+      <div class="card highlight">
+        <h3><i class="bi bi-bar-chart"></i> Vehicle Utilisation History</h3>
+        <div class="pie-chart-history">
+          <div class="pie-label-history">{{ utilization }}%</div>
+        </div>
+      </div>
+      <div class="card logistics-card">
+        <h3><i class="bi bi-truck"></i> Logistics Tracking History</h3>
+        <div class="form-row">
+          <label for="avgDelay">Average Delay Time:</label>
+          <input id="avgDelay" type="text" value="{{ avg_delay|default('0.5') }} hrs" readonly />
+        </div>
+        <div class="form-row">
+          <label for="avgIdle">Average Idle Time:</label>
+          <input id="avgIdle" type="text" value="{{ avg_idle|default('1.5') }} hrs" readonly />
+        </div>
+        <div class="form-row">
+          <label for="numOrders">Number of Orders Completed:</label>
+          <input id="numOrders" type="text" value="{{ total_deliveries }}" readonly />
+        </div>
+        <div class="form-row">
+          <label for="billingAcc">Performance Accuracy (%):</label>
+          <input id="billingAcc" type="text" value="{{ on_time_percent }}" readonly />
+        </div>
+      </div> 
+    </section> 
     <section class="card highlight">
       <h3><i class="bi bi-box-seam"></i> Order Management History</h3>
       <div class="grid-three">
@@ -72,7 +68,6 @@
         </div>
       </div>
     </section>
-
     <section class="card">
       <h3><i class="bi bi-people"></i> Customer Feedback History</h3>
       <div class="grid-two">
@@ -83,7 +78,6 @@
         </div>
       </div>
     </section>
-
     <section class="card">
       <h4>
         <a href="{{ url_for('home') }}">
@@ -92,7 +86,6 @@
         </a>
       </h4>
     </section>
-
   </main>
 </body>
 </html> 
