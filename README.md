@@ -4,7 +4,7 @@ This project is a **web-based logistics management system** developed for BFB321
 It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** through a simple HTML/CSS interface with a supporting SQL schema.
 
 ---
-### Team Details
+## Team Details
 
 | Student Number | Name      | Surname      | Username           |
 |:---------------|:----------|:-------------|:-------------------|
