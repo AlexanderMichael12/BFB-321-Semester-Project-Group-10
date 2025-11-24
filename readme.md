@@ -109,7 +109,7 @@ The database includes sample entries for testing:
 │  ├─ index.html          # Login page
 │  └─ vehicle.html        # Vehicle specifc dashboard & stats
 │
-├─ README.md              # Project documentation
+├─ readme.md              # Project documentation
 ├─ TruckDelivery.db       # SQLite database
 ├─ TruckDelivery.sql      # Database schema
 └─ app.py                 # Flask application
