@@ -68,10 +68,7 @@ The system provides:
 - **Database Support (`TruckDelivery.sql`, `TruckDelivery.db`)**
   Schema and example database for drivers, trucks, deliveries, odometer logs, and maintenance logs.
 - **Backend (Flask)**
-  - Data retrieval and processing.
-  - Route handling.
-  - REST API endpoints for CRUD operations.
-  - Database CRUD operations.
+  Data retrieval and processing, route handling, REST API endpoints for CRUD operations and database CRUD operations.
 
 ---
 
