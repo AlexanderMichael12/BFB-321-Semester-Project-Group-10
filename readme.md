@@ -1,7 +1,7 @@
 #   BFB Semester Project - Supply Chain Web Application
 
 This project is a **web-based logistics management system** developed for BFB321. 
-It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** using a clean HTML interface supported by a Flask backend adn an SQLite database.
+It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** using a clean HTML interface supported by a Flask backend and an SQLite database.
 
 ---
 ## Team Details
