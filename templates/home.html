@@ -39,7 +39,7 @@
     <section class="grid-two">
       <div class="card highlight">
         <h3><i class="bi bi-bar-chart"></i> Overall Vehicle Capacity Utilization</h3>
-        <div class="pie-chart" style="background: conic-gradient(orange 0% {{ utilization }}%, white {{ utilization }}% 100%);">
+        <div class="pie-chart">
           <div class="pie-label">{{ utilization }}%</div>
         </div>
       </div>
@@ -47,11 +47,11 @@
         <h3><i class="bi bi-truck"></i> Live Logistics Tracking</h3>
         <div class="form-row">
           <label for="avgDelay">Average Delay Time:</label>
-          <input id="avgDelay" type="text" value="0 hrs" readonly />
+          <input id="avgDelay" type="text" value="{{ avg_delay|default('0') }} hrs" readonly />
         </div>
         <div class="form-row">
           <label for="avgIdle">Average Idle Time:</label>
-          <input id="avgIdle" type="text" value="2 hrs" readonly />
+          <input id="avgIdle" type="text" value="{{ avg_idle|default('N/A') }} hrs" readonly />
         </div>
         <div class="form-row">
           <label for="numOrders">Number of Orders:</label>

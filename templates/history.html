@@ -17,7 +17,7 @@
     <section class="grid-two">
   <div class="card highlight">
     <h3><i class="bi bi-bar-chart"></i> Vehicle Utilisation History</h3>
-    <div class="pie-chart-history" style="background: conic-gradient(green 0% {{ utilization }}%, white {{ utilization }}% 100%);">
+    <div class="pie-chart-history">
       <div class="pie-label-history">{{ utilization }}%</div>
     </div>
   </div>
@@ -26,11 +26,11 @@
     <h3><i class="bi bi-truck"></i> Logistics Tracking History</h3>
     <div class="form-row">
       <label for="avgDelay">Average Delay Time:</label>
-      <input id="avgDelay" type="text" value="0.5 hrs" readonly />
+      <input id="avgDelay" type="text" value="{{ avg_delay|default('0.5') }} hrs" readonly />
     </div>
     <div class="form-row">
       <label for="avgIdle">Average Idle Time:</label>
-      <input id="avgIdle" type="text" value="1.5 hrs" readonly />
+      <input id="avgIdle" type="text" value="{{ avg_idle|default('1.5') }} hrs" readonly />
     </div>
     <div class="form-row">
       <label for="numOrders">Number of Orders Completed:</label>
@@ -60,15 +60,15 @@
         </div>
         <div class="form-row">
           <label for="orderAcc">Order Accuracy (%):</label>
-          <input id="orderAcc" type="text" value="98.5" readonly />
+          <input id="orderAcc" type="text" value="{{ order_accuracy|default('98.5') }}" readonly />
         </div>
         <div class="form-row">
           <label for="avgReturn">Average Returns per Order:</label>
-          <input id="avgReturn" type="text" value="0.2" readonly />
+          <input id="avgReturn" type="text" value="{{ avg_returns|default('0.2') }}" readonly />
         </div>
         <div class="form-row">
           <label for="dispatch">Number of Rejected Orders</label>
-          <input id="dispatch" type="text" value="0" readonly />
+          <input id="dispatch" type="text" value="{{ rejected_orders|default('0') }}" readonly />
         </div>
       </div>
     </section>
