@@ -7,7 +7,7 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 ### Team Details
 
 | Student Number | Name      | Surname      | Username           |
-|----------------|-----------|--------------|--------------------|
+|:---------------|:----------|:-------------|:-------------------|
 | 22517741       | Alexander | Michael      | AlexanderMicheal12 |
 | 22543725       | Dimitri   | Ladas        | DimitriLadas       |
 | 22550292       | Jarod     | Labuschagne  | Jarod2507025       |
