@@ -15,10 +15,10 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 
 ---
 ## Task allocation
-- Alexander: Did the REST API design and endpoint definition, and did the backend logic and database inegration. Did the reflection in the report.
-- Dimitri: Updated the README, Did the Implementation guide, Risk & Mitigation and Sustainability Scalability in the report.
-- Jarod: Did the executive summary and final concept & architecture in the report and helped with the Frontend-backend integration.
-- Leandro: Did the backend logic and database integration and the frontend-backend integration.Did the Technology integration and User journey in the report.
+- Alexander: Compiled parts of the HTML and CSS code for the website. Completed the REST API design and endpoint definition, as well as the backend logic and database inegration. Alex was also responsible for the reflection in the project report.
+- Dimitri: Compiled the README, Did the Implementation guide, Risk & Mitigation and Sustainability Scalability in the report. Dimitri was also responsible for parts of the HTML and CSS which was worked on together with Alex and Leandro.
+- Jarod: Completed the executive summary and final concept & architecture in the report and helped with the Frontend-backend integration. Jarrod was also responsible for the SQL code and setting up the connection with the db. He also created the ERD for this project.
+- Leandro: Did the backend logic and database integration as well as the frontend-backend integration. Leandro populated the Technology integration and User journey sections of the report and completed aspects of html and CSS.
 ---
 ## Overview
 The system provides:
