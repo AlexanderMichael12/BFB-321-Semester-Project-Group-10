@@ -8,7 +8,13 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 - 22517741  AlexanderMicheal12
 - 22543725  DimitriLadas
 - 22550292  Jarod2507025
-- 23529939  
+- 23529939  Leandro01789
+---
+## Task allocation
+- Alexander: Did the REST API design and endpoint definition, and did the backend logic and database inegration. Did the reflection in the report.
+- Dimitri: Updated the README, Did the Implementation guide, Risk & Mitigation and Sustainability Scalability in the report.
+- Jarod: Did the executive summary and final concept & architecture in the report and helped with the Frontend-backend integration.
+- Leandro: Did the backend logic and database integration and the frontend-backend integration.Did the Technology integration and User journey in the report.
 ---
 ## Overview
 The system provides:
