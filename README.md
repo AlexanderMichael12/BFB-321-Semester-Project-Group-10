@@ -1,7 +1,7 @@
-#   BFB Semester Project - Supply Chain Web Appliaction
+#   BFB Semester Project - Supply Chain Web Application
 
 This project is a **web-based logistics management system** developed for BFB321. 
-It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** through a simple HTML/CSS interface with a supporting SQL schema.
+It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** using a clean HTML interface supported by a Flask backend adn an SQLite database.
 
 ---
 ## Team Details
@@ -10,7 +10,7 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 |:---------------|:----------|:-------------|:-------------------|
 | 22517741       | Alexander | Michael      | AlexanderMicheal12 |
 | 22543725       | Dimitri   | Ladas        | DimitriLadas       |
-| 22550292       | Jarod     | Labuschagne  | Jarod25072025       |
+| 22550292       | Jarod     | Labuschagne  | Jarod25072025      |
 | 23529939       | Leandro   | Pimentel     | Leandro01789       |
 
 ---
@@ -34,11 +34,23 @@ The system provides:
 - A dashboard linking all main modules
 - HTML pages for drivers, vehicles and delivery history
 - A shared CSS file for consistent styling
-- An SQL schema and demo database to support backend integration in the future
+- A structured SQLite database with sample data
+- A Flask backend that powers system logic and data retrieval
 
 **Tech Stack**
-- Frontend: HTML, CSS
-- Data Layer: SQL schema (`TruckDelivery.sql`) + SQLite demo DB (`TruckDelivery.db`)
+- Frontend: 
+    - HTML
+    - CSS
+    - Bootstrap Icons
+    - Jinja2 templating (used within Flask)
+- Backend: 
+    - Flask (Python): Handles routing, REST API endpoints, template rendering, and
+      database communciation
+    - RESTful API structure for CRUD operations
+    - Python + SQLite integration
+- Database Layer: 
+    - SQL schema (`TruckDelivery.sql`) 
+    - SQLite demo DB (`TruckDelivery.db`)
 
 ---
 
@@ -55,6 +67,11 @@ The system provides:
   Consistent styles for tables, navigation, and layout.
 - **Database Support (`TruckDelivery.sql`, `TruckDelivery.db`)**
   Schema and example database for drivers, trucks, deliveries, odometer logs, and maintenance logs.
+- **Backend (Flask)**
+  - Data retrieval and processing.
+  - Route handling.
+  - REST API endpoints for CRUD operations.
+  - Database CRUD operations.
 
 ---
 
@@ -108,6 +125,9 @@ The database includes sample entries for testing:
 - **HTML5**: Structure and static pages.
 - **CSS3**: Styling and responsive layout.
 - **Bootstrap Icons**: Icon set for UI elements. 
+- **Jinja2**: Template rendering wihtin Flask.
+- **Flask**: Routing, rendering, REST API.
+- **Python**: Server-side logic.
 - **SQLite / SQL Schema**: For data storage and testing. 
 
 ## Browser Compatibility
