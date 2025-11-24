@@ -46,7 +46,7 @@ The system provides:
 - Backend: 
     - Flask (Python): Handles routing, REST API endpoints, template rendering, and
       database communciation
-    - RESTful API structure for CRUD operations
+    - REST API structure for CRUD operations
     - Python + SQLite integration
 - Database Layer: 
     - SQL schema (`TruckDelivery.sql`) 
