@@ -1,7 +1,7 @@
 #   BFB Semester Project - Supply Chain Web Application
 
 This project is a **web-based logistics management system** developed for BFB321. 
-It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** using a clean HTML interface supported by a Flask backend adn an SQLite database.
+It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** using a clean HTML interface supported by a Flask backend and an SQLite database.
 
 ---
 ## Team Details
@@ -20,7 +20,7 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
 
 - Dimitri Ladas:
-Created the entire project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+Created the entire project readme from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
 
 - Jarod Labuschagne:
 Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
@@ -68,10 +68,7 @@ The system provides:
 - **Database Support (`TruckDelivery.sql`, `TruckDelivery.db`)**
   Schema and example database for drivers, trucks, deliveries, odometer logs, and maintenance logs.
 - **Backend (Flask)**
-  - Data retrieval and processing.
-  - Route handling.
-  - REST API endpoints for CRUD operations.
-  - Database CRUD operations.
+  Data retrieval and processing, route handling, REST API endpoints for CRUD operations and database CRUD operations.
 
 ---
 
@@ -109,7 +106,7 @@ The database includes sample entries for testing:
 │  ├─ index.html          # Login page
 │  └─ vehicle.html        # Vehicle specifc dashboard & stats
 │
-├─ README.md              # Project documentation
+├─ readme.md              # Project documentation
 ├─ TruckDelivery.db       # SQLite database
 ├─ TruckDelivery.sql      # Database schema
 └─ app.py                 # Flask application
