@@ -76,10 +76,10 @@
     <section class="card">
       <h3><i class="bi bi-people"></i> Customer Feedback History</h3>
       <div class="grid-two">
-        <textarea placeholder="Customer Queries and Complaints"></textarea>
+        <textarea placeholder="Customer Queries and Complaints" readonly>{{ customer_queries }}</textarea>
         <div class="satisfaction">
           <p>Overall Satisfaction Score</p>
-          <input type="text"/>
+          <input type="text" value="{{ satisfaction_score }}" readonly/>
         </div>
       </div>
     </section>

@@ -19,34 +19,34 @@ def index():
 def home():
     conn = get_db_connection()
     
-    # Fetch KPIs and metrics
+   
     truck_count = conn.execute("SELECT COUNT(*) FROM trucks").fetchone()[0]
     driver_count = conn.execute("SELECT COUNT(*) FROM drivers").fetchone()[0]
     delivery_count = conn.execute("SELECT COUNT(*) FROM deliveries").fetchone()[0]
     
-    # Delivery status breakdown
+    
     delivered = conn.execute("SELECT COUNT(*) FROM deliveries WHERE status='Delivered'").fetchone()[0]
     pending = conn.execute("SELECT COUNT(*) FROM deliveries WHERE status='Pending'").fetchone()[0]
     in_transit = conn.execute("SELECT COUNT(*) FROM deliveries WHERE status='In Transit'").fetchone()[0]
     
-    # Calculate on-time delivery percentage
+    
     on_time = conn.execute("""
         SELECT COUNT(*) FROM deliveries 
         WHERE status='Delivered' AND actual_dropoff <= scheduled_dropoff
     """).fetchone()[0]
     on_time_percent = round((on_time / delivered * 100), 1) if delivered > 0 else 0
     
-    # Average odometer reading
+    
     avg_odometer = conn.execute("SELECT AVG(odometer_reading) FROM odometer_logs").fetchone()[0] or 0
     avg_odometer = round(avg_odometer, 0)
     
-    # Recent maintenance count
+    
     maintenance_count = conn.execute("SELECT COUNT(*) FROM maintenance_logs").fetchone()[0]
     
-    # Vehicle utilization (deliveries per truck)
+    
     utilization = round((delivery_count / truck_count), 1) if truck_count > 0 else 0
     
-    # Calculate average delay (difference between scheduled and actual dropoff for delivered orders)
+    
     delay_result = conn.execute("""
         SELECT AVG((julianday(actual_dropoff) - julianday(scheduled_dropoff)) * 24) 
         FROM deliveries 
@@ -123,22 +123,22 @@ def view_drivers():
 def view_history():
     conn = get_db_connection()
     
-    # Historical metrics
+    
     total_deliveries = conn.execute("SELECT COUNT(*) FROM deliveries WHERE status='Delivered'").fetchone()[0]
     total_maintenance = conn.execute("SELECT COUNT(*) FROM maintenance_logs").fetchone()[0]
     
-    # Calculate historical utilization
+   
     truck_count = conn.execute("SELECT COUNT(*) FROM trucks").fetchone()[0]
     utilization = round((total_deliveries / truck_count * 100), 0) if truck_count > 0 else 0
     
-    # On-time delivery stats
+   
     on_time = conn.execute("""
         SELECT COUNT(*) FROM deliveries 
         WHERE status='Delivered' AND actual_dropoff <= scheduled_dropoff
     """).fetchone()[0]
     on_time_percent = round((on_time / total_deliveries * 100), 1) if total_deliveries > 0 else 0
     
-    # Calculate cancelled/rejected orders
+    
     rejected_orders = conn.execute("SELECT COUNT(*) FROM deliveries WHERE status='Cancelled'").fetchone()[0]
     
     conn.close()
@@ -152,20 +152,22 @@ def view_history():
                          avg_delay=0.5,
                          avg_idle=1.5,
                          order_accuracy=98.5,
-                         avg_returns=0.2)
+                         avg_returns=0.2,
+                         customer_queries='Package delivery times, route optimization requests, vehicle condition inquiries',
+                         satisfaction_score='4.7/5.0')
 
 @app.route('/vehicle')
 def view_vehicle():
     conn = get_db_connection()
     
-    # Get all trucks for selection
+    
     trucks = conn.execute("SELECT * FROM trucks ORDER BY code").fetchall()
     
-    # Get first truck data as default
+   
     if trucks:
         first_truck_id = trucks[0]['truck_id']
         
-        # Get odometer reading
+       
         odometer = conn.execute("""
             SELECT odometer_reading FROM odometer_logs 
             WHERE truck_id = ? 
@@ -173,20 +175,20 @@ def view_vehicle():
         """, (first_truck_id,)).fetchone()
         mileage = odometer[0] if odometer else 0
         
-        # Get maintenance info
+        
         maintenance = conn.execute("""
             SELECT COUNT(*) FROM maintenance_logs WHERE truck_id = ?
         """, (first_truck_id,)).fetchone()[0]
         
-        # Get deliveries for this truck
+        
         deliveries = conn.execute("""
             SELECT COUNT(*) FROM deliveries WHERE truck_id = ? AND status='Delivered'
         """, (first_truck_id,)).fetchone()[0]
         
-        # Calculate utilization
+        
         utilization = 95  # Sample value
         
-        # Get next service date (30 days from last service or N/A)
+        
         last_service = conn.execute("""
             SELECT service_date FROM maintenance_logs 
             WHERE truck_id = ? 
@@ -199,7 +201,7 @@ def view_vehicle():
             next_date = last_date + timedelta(days=90)
             next_service_date = next_date.strftime('%Y-%m-%d')
         
-        # Get expected delivery time for pending deliveries
+        
         pending_delivery = conn.execute("""
             SELECT scheduled_dropoff FROM deliveries 
             WHERE truck_id = ? AND status='Pending' 
