@@ -82,15 +82,22 @@ The database includes sample entries for testing:
 
 ## File Structure
 ```
-├─ index.html           # Main dashboard / entry point.
-├─ home.html            # Dashboard with navigation cards.
-├─ drivers.html         # Manage and view drivers.
-├─ vehicle.html         # Manage and view trucks.
-├─ history.html         # Delivery history records. 
-├─ main.css             # Styling for tables, layout, and dashboard.
-├─ TruckDelivery.sql    # Database schema.
-├─ TruckDelivery.db     # SQLite sample database.
-└─ README.md            # Documentation
+├─ .venv/                 # Virtual environment
+│
+├─ static/
+│  └─ main.css            # Global stylesheets
+│
+├─ templates/
+│  ├─ drivers.html        # Driver contacts details
+│  ├─ history.html        # Fleet history
+│  ├─ home.html           # Main dashboard
+│  ├─ index.html          # Login page
+│  └─ vehicle.html        # Vehicle specifc dashboard & stats
+│
+├─ README.md              # Project documentation
+├─ TruckDelivery.db       # SQLite database
+├─ TruckDelivery.sql      # Database schema
+└─ app.py                 # Flask application
 ```
 ## Usage
 
