@@ -4,17 +4,25 @@ This project is a **web-based logistics management system** developed for BFB321
 It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** through a simple HTML/CSS interface with a supporting SQL schema.
 
 ---
-## Team details
-- 22517741  AlexanderMicheal12
-- 22543725  DimitriLadas
-- 22550292  Jarod2507025
-- 23529939  Leandro01789
+## Team Details
+
+| Student Number | Name      | Surname      | Username           |
+|:---------------|:----------|:-------------|:-------------------|
+| 22517741       | Alexander | Michael      | AlexanderMicheal12 |
+| 22543725       | Dimitri   | Ladas        | DimitriLadas       |
+| 22550292       | Jarod     | Labuschagne  | Jarod2507025       |
+| 23529939       | Leandro   | Pimentel     | Leandro01789       |
+
 ---
 ## Task allocation
-- Alexander: Did the REST API design and endpoint definition, and did the backend logic and database inegration. Did the reflection in the report.
-- Dimitri: Updated the README, Did the Implementation guide, Risk & Mitigation and Sustainability Scalability in the report.
-- Jarod: Did the executive summary and final concept & architecture in the report and helped with the Frontend-backend integration.
-- Leandro: Did the backend logic and database integration and the frontend-backend integration.Did the Technology integration and User journey in the report.
+- Alexander Michael
+Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
+- Dimitri Ladas
+Created the project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+- Jarod Labuschagne
+Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
+- Leandro Pimentel
+Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report. 
 ---
 ## Overview
 The system provides:
