@@ -20,7 +20,7 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
 
 - Dimitri Ladas:
-Created the entire project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+Created the entire project readme from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
 
 - Jarod Labuschagne:
 Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
