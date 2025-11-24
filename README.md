@@ -10,7 +10,7 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 |:---------------|:----------|:-------------|:-------------------|
 | 22517741       | Alexander | Michael      | AlexanderMicheal12 |
 | 22543725       | Dimitri   | Ladas        | DimitriLadas       |
-| 22550292       | Jarod     | Labuschagne  | Jarod2507025       |
+| 22550292       | Jarod     | Labuschagne  | Jarod25072025       |
 | 23529939       | Leandro   | Pimentel     | Leandro01789       |
 
 ---
