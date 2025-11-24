@@ -100,7 +100,7 @@ The database includes sample entries for testing:
 ├─ .venv/                 # Virtual environment
 │
 ├─ static/
-│  └─ main.css            # Global stylesheets
+│  └─ main.css            # Global stylesheet
 │
 ├─ templates/
 │  ├─ drivers.html        # Driver contacts details
