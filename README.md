@@ -4,11 +4,15 @@ This project is a **web-based logistics management system** developed for BFB321
 It enables users to manage **drivers, trucks, deliveries, odometer logs, and maintenance records** through a simple HTML/CSS interface with a supporting SQL schema.
 
 ---
-## Team details
-- 22517741  AlexanderMicheal12
-- 22543725  DimitriLadas
-- 22550292  Jarod2507025
-- 23529939  Leandro01789
+### Team Details
+
+| Student Number | Username          |
+|----------------|-------------------|
+| 22517741       | AlexanderMicheal12 |
+| 22543725       | DimitriLadas       |
+| 22550292       | Jarod2507025       |
+| 23529939       | Leandro01789       |
+
 ---
 ## Task allocation
 - Alexander: Did the REST API design and endpoint definition, and did the backend logic and database inegration. Did the reflection in the report.
