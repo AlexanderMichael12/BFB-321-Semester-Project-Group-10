@@ -15,21 +15,19 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 
 ---
 ## Task allocation
-<<<<<<< HEAD
+
 - Alexander Michael
 Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
+
 - Dimitri Ladas
-Created the project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+Created the entire project README from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+
 - Jarod Labuschagne
 Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
+
 - Leandro Pimentel
-Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report. 
-=======
-- **Alexander:** Compiled parts of the HTML and CSS code for the website. Completed the REST API design and endpoint definition, as well as the backend logic and database inegration. Alex was also responsible for the reflection in the project report.
-- **Dimitri:** Compiled the README, Did the Implementation guide, Risk & Mitigation and Sustainability Scalability in the report. Dimitri was also responsible for parts of the HTML and CSS which was worked on together with Alex and Leandro.
-- **Jarod:** Completed the executive summary and final concept & architecture in the report and helped with the Frontend-backend integration. Jarrod was also responsible for the SQL code and setting up the connection with the db. He also created the ERD for this project.
-- **Leandro:** Did the backend logic and database integration as well as the frontend-backend integration. Leandro populated the Technology integration and User journey sections of the report and completed aspects of html and CSS.
->>>>>>> 4bd5abb87e4ee6cce22da19e7e1a03291d53fc66
+Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report.
+
 ---
 ## Overview
 The system provides:
