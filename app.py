@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, f
 import sqlite3
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = 'your-secret-key-here'
 
 def get_db_connection():
@@ -349,6 +349,12 @@ def add_odometer():
     conn.commit()
     conn.close()
     return jsonify({"message": "Odometer reading added"}), 201
+
+# Ensure static files are served even in production
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    from flask import send_from_directory
+    return send_from_directory(app.static_folder, filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
