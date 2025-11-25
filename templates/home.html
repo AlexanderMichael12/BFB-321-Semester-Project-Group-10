@@ -44,12 +44,12 @@
       <div class="card">
         <h3><i class="bi bi-truck"></i> Live Logistics Tracking</h3>
         <div class="form-row">
-          <label for="avgDelay">Average Delay Time:</label>
-          <input id="avgDelay" type="text" value="{{ avg_delay|default('0') }} hrs" readonly />
+          <label for="avgDelay">Average Delay Time: (hrs)</label>
+          <input id="avgDelay" type="text" value="{{ avg_delay|default('0') }}" readonly />
         </div>
         <div class="form-row">
-          <label for="avgIdle">Average Idle Time:</label>
-          <input id="avgIdle" type="text" value="{{ avg_idle|default('0') }} hrs" readonly />
+          <label for="avgIdle">Average Idle Time: (hrs)</label>
+          <input id="avgIdle" type="text" value="{{ avg_idle|default('0') }}" readonly />
         </div>
         <div class="form-row">
           <label for="numOrders">Number of Orders:</label>

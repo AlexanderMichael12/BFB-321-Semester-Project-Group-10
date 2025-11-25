@@ -199,7 +199,7 @@ def view_vehicle():
             WHERE truck_id = ? AND status='Pending' 
             ORDER BY scheduled_dropoff LIMIT 1
         """, (first_truck_id,)).fetchone()
-        expected_delivery_time = '1 hour'
+        expected_delivery_time = '1'
 
         if pending_delivery:
             from datetime import datetime
