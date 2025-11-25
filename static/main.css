@@ -487,8 +487,8 @@ textarea {
   height: 300px;
   border-radius: 50%;
   background: conic-gradient(
-    orange 0% 0.8%,
-    white 0.8% 100%);
+    orange 0% 0.5%,
+    white 0.5% 100%);
   margin: 20px auto;
   max-width: 300px;
   overflow: hidden;
@@ -510,8 +510,8 @@ textarea {
   height: 300px;
   border-radius: 50%;
   background: conic-gradient(
-    green 0% 44%,
-    white 44% 100%);
+    green 0% 25%,
+    white 25% 100%);
   margin: 20px auto;
   max-width: 300px;
 }
