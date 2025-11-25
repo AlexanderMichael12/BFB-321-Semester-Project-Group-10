@@ -17,16 +17,16 @@ It enables users to manage **drivers, trucks, deliveries, odometer logs, and mai
 ## Task allocation
 
 - Alexander Michael:
-Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
+Was responsible for the creation of the CSS and HTML templates that were used throughout the website. Led the REST API design, defined all backend endpoints, and implemented the core backend logic together with database integration. Also authored the Reflection section of the final report.
 
 - Dimitri Ladas:
-Created the entire project readme from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
+Desgined and detailed the contents of the driver contact details page. Created the entire project readme from scratch and produced the Implementation Guide. Completed the Risk & Mitigation section as well as the Sustainability & Scalability components of the report.
 
 - Jarod Labuschagne:
-Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
+Created the SQL database and linked ERD. Authored the Executive Summary and the Final Concept & System Architecture sections. Assisted with frontend–backend integration to ensure smooth communication between UI and backend services.
 
 - Leandro Pimentel:
-Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report.
+Designed and populated the history page as well as components of the vehicle specific page. Developed key components of the backend logic, contributed extensively to database integration, and supported frontend–backend integration. Authored the Technology Integration and User Journey sections of the report.
 
 ---
 ## Overview
