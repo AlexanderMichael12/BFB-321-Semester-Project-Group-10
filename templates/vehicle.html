@@ -11,10 +11,10 @@
   <main class="dashboard">
     <section class="card highlight">
       <h4>Vehicle Specific Information</h4>
-      <form class="toolbar" action="#" method="get" novalidate>
+      <form class="toolbar" action="{{ url_for('view_vehicle') }}" method="get" novalidate>
         <div class="form-row compact">
           <label for="q"><i class="bi bi-search"></i> Search</label>
-          <input type="text" placeholder="Truck-06"/>
+          <input type="text" id="q" name="q" placeholder="Truck-06" value="{{ request.args.get('q', '') }}"/>
         </div>
         <button type="submit" class="apply-button" aria-label="Apply filters">Apply</button>
       </form>

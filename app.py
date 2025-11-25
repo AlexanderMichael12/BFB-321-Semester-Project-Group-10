@@ -158,7 +158,17 @@ def view_history():
 @app.route('/vehicle')
 def view_vehicle():
     conn = get_db_connection()
-    trucks = conn.execute("SELECT * FROM trucks ORDER BY code").fetchall()
+    
+    search_query = request.args.get('q', '').strip()
+    
+    if search_query:
+        trucks = conn.execute("""
+            SELECT * FROM trucks 
+            WHERE code LIKE ? OR license_plate LIKE ?
+            ORDER BY code
+        """, (f'%{search_query}%', f'%{search_query}%')).fetchall()
+    else:
+        trucks = conn.execute("SELECT * FROM trucks ORDER BY code").fetchall()
 
     if trucks:
         first_truck_id = trucks[0]['truck_id']
