@@ -6,7 +6,6 @@ app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = 'your-secret-key-here'
 
 def get_db_connection():
-    """Get database connection"""
     conn = sqlite3.connect('TruckDelivery.db')
     conn.row_factory = sqlite3.Row
     return conn
@@ -71,10 +70,6 @@ def home():
 
 @app.route('/dashboard')
 def dashboard():
-    """
-    Main dashboard page.
-    Similar to lecturer's index(): shows high-level KPIs.
-    """
     conn = get_db_connection()
 
     truck_count = conn.execute("SELECT COUNT(*) FROM trucks").fetchone()[0]
@@ -102,23 +97,42 @@ def dashboard():
 
 @app.route('/drivers')
 def view_drivers():
-    """
-    Drivers page: later we'll show drivers from DB in the table.
-    """
     conn = get_db_connection()
-    drivers = conn.execute("""
-        SELECT d.driver_id,
-               d.first_name,
-               d.last_name,
-               d.phone_number,
-               t.code AS truck_code,
-               t.license_plate
-        FROM drivers d
-        JOIN trucks t ON d.truck_id = t.truck_id
-        ORDER BY d.first_name
-    """).fetchall()
+    
+    search_query = request.args.get('q', '').strip()
+    
+    if search_query:
+        drivers = conn.execute("""
+            SELECT d.driver_id,
+                   d.first_name,
+                   d.last_name,
+                   d.phone_number,
+                   t.code AS truck_code,
+                   t.license_plate
+            FROM drivers d
+            JOIN trucks t ON d.truck_id = t.truck_id
+            WHERE d.first_name LIKE ? 
+               OR d.last_name LIKE ?
+               OR d.phone_number LIKE ?
+               OR t.code LIKE ?
+               OR t.license_plate LIKE ?
+            ORDER BY d.first_name
+        """, (f'%{search_query}%', f'%{search_query}%', f'%{search_query}%', f'%{search_query}%', f'%{search_query}%')).fetchall()
+    else:
+        drivers = conn.execute("""
+            SELECT d.driver_id,
+                   d.first_name,
+                   d.last_name,
+                   d.phone_number,
+                   t.code AS truck_code,
+                   t.license_plate
+            FROM drivers d
+            JOIN trucks t ON d.truck_id = t.truck_id
+            ORDER BY d.first_name
+        """).fetchall()
+    
     conn.close()
-    return render_template('drivers.html', drivers=drivers)
+    return render_template('drivers.html', drivers=drivers, search_query=search_query)
 
 @app.route('/history')
 def view_history():

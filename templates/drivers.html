@@ -11,10 +11,10 @@
   <main class="dashboard">
     <section class="card">
       <h4>Driver Contact Details</h4>
-      <form class="toolbar" action="#" method="get" novalidate>
+      <form class="toolbar" action="{{ url_for('view_drivers') }}" method="get" novalidate>
         <div class="form-row compact">
           <label for="q"><i class="bi bi-search"></i> Search</label>
-          <input type="text" placeholder="Driver, Phone Number, Assigned Vehicle" />
+          <input type="text" id="q" name="q" placeholder="Driver, Phone Number, Assigned Vehicle" value="{{ search_query }}" />
         </div>
         <button type="submit" class="apply-button" aria-label="Apply filters">Apply</button>
       </form>
@@ -31,54 +31,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <div class="driver-cell">
-                  <div>
-                    <div>Alexander Michael</div>
+            {% if drivers %}
+              {% for d in drivers %}
+              <tr>
+                <td>
+                  <div class="driver-cell">
+                    <div>
+                      <div>{{ d.first_name }} {{ d.last_name }}</div>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td>079 427 5345</td>
-              <td>Truck-06</td>
-              <td>CZ37FYGP</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="driver-cell">
-                  <div>
-                    <div>Dimitri Ladas</div>
-                  </div>
-                </div>
-              </td>
-              <td>081 077 3537</td>
-              <td>Truck-12</td>
-              <td>XW42TYGP</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="driver-cell">
-                  <div>
-                    <div>Leandro Pimentel</div>
-                  </div>
-                </div>
-              </td>
-              <td>060 526 2335</td>
-              <td>Truck-15</td>
-              <td>DJ68LKGP</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="driver-cell">
-                  <div>
-                    <div>Jarod Labuschagne</div>
-                  </div>
-                </div>
-              </td>
-              <td>076 333 3914</td>
-              <td>Truck-09</td>
-              <td>DN42FJGP</td>
-            </tr>
+                </td>
+                <td>{{ d.phone_number }}</td>
+                <td>{{ d.truck_code }}</td>
+                <td>{{ d.license_plate }}</td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="4" style="text-align: center;">No drivers found matching your search.</td>
+              </tr>
+            {% endif %}
           </tbody>
         </table>
       </div>
@@ -91,6 +63,15 @@
         </a>
       </h4>
     </section>
+  </main>
+</body>
+</html>
+
+          <span>Back to dashboard</span>
+        </a>
+      </h4>
+    </section>
+
   </main>
 </body>
 </html>
